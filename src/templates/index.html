@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualização de Telefones</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Atualização de Telefones</h1>
+        
+        <div class="search-section">
+            <div class="form-group">
+                <label for="codigo-cliente">Código do Cliente:</label>
+                <input type="text" id="codigo-cliente" placeholder="Digite o código do cliente">
+            </div>
+            <button id="buscar-btn">Buscar Cliente</button>
+        </div>
+
+        <div id="resultado" class="hidden">
+            <div class="cliente-info">
+                <h2>Dados do Cliente</h2>
+                <p><strong>Nome:</strong> <span id="nome-cliente"></span></p>
+                <p><strong>Telefone Atual:</strong> <span id="telefone-atual"></span></p>
+            </div>
+
+            <div class="update-section">
+                <div class="form-group">
+                    <label for="novo-telefone">Novo Telefone:</label>
+                    <input type="text" id="novo-telefone" placeholder="Digite o novo telefone">
+                </div>
+                <button id="atualizar-btn">Salvar Telefone</button>
+            </div>
+        </div>
+
+        <div id="mensagem" class="hidden"></div>
+        
+        <div class="download-section">
+            <p>Acesse a planilha atualizada:</p>
+            <a href="/download" class="download-btn">Baixar Planilha</a>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
