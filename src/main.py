@@ -9,11 +9,12 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))  # DON'T CHANGE T
 
 app = Flask(__name__)
 
-# Caminho para o arquivo Excel original
-EXCEL_ORIGINAL = '/home/ubuntu/upload/BASE CONTATO AVONA.xlsx'
+# Usar caminhos relativos baseados no diretório atual
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+EXCEL_ORIGINAL = os.path.join(BASE_DIR, 'data', 'BASE CONTATO AVONA.xlsx')
 
 # Diretório para armazenar as versões atualizadas
-DATA_DIR = '/home/ubuntu/cliente_app/data'
+DATA_DIR = os.path.join(BASE_DIR, 'data')
 os.makedirs(DATA_DIR, exist_ok=True)
 
 # Caminho para o arquivo Excel atualizado
